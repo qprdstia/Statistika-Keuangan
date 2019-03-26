@@ -1,0 +1,42 @@
+nilaiakumulasi <- function(pilih,k,im,t, m=TRUE)
+  #satu : bunga tunggal
+  #dua : bunga majemuk nominal/biasa
+  #tiga : bunga majemuk kontinu
+  #k : Modal
+  #im : Bunga (desimal)
+  #t : waktu (tahun)
+  #m : banyak bunga yang diberikan dlm 1 thn
+nilaiakumulasi <-function(pilih,k,im,t, m=TRUE){
+  j = im/m
+   switch(pilih,
+         satu = {
+           ak = k*(1+j*t)
+           cat ("Nilai Akumulasi BUnga Tunggal: ",ak)
+         },
+          dua = {
+            ak = k*(1+j)^(m*t)
+            cat ("Nilai akumulasi bunga majemuk/biasa: ",ak)
+          },
+         tiga = {
+           ak = k*exp(im*t)
+           cat ("Nilai akumulasi bunga kontinu: ", ak)
+         })
+return(ak)}
+nilaiakumulasi (2,1,0.1,5)
+nilaiakumulasi <-function(pilih,k,t,im, m=TRUE){
+  j = im/m
+  switch(pilih,
+         satu = {
+           ak = k*(1+j*t)
+           cat ("Nilai Akumulasi BUnga Tunggal: ",ak)
+         },
+         dua = {
+           ak = k*(1+j)^(m*t)
+           cat ("Nilai akumulasi bunga majemuk/biasa: ",ak)
+         },
+         tiga = {
+           ak = k*exp(im*t)
+           cat ("Nilai akumulasi bunga kontinu: ", ak)
+         })
+  return(ak)}
+nilaiakumulasi (2,1,0.1,5, m=2)
