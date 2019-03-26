@@ -1,0 +1,21 @@
+cicilan<- function(num, tot, i, t, m= TRUE){
+  n = m*t
+  j = i/m
+  v = (1+j)^-1
+  #m itu bulan
+  #tot : perwakilan an adan sn
+  switch(num,
+         satu={
+           kan = tot*j/(1-v^n)
+           ksn = tot*j/((1+j)^n-1)
+           cat ("cicilan present value annuitas akhir", kan, "\n")
+           cat ("cicilan nilai akumulasi untuk annuitas akhir", ksn)
+         },
+         dua={
+           kan = tot*(j*v)/(1-v^n)
+           ksn = tot*(j*v)/((1+j)^n-1)
+           cat ("cicilan present value annuitas awal", kan, "\n")
+           cat ("cicilan nilai akumulasi untuk annuitas awal", ksn)
+         })
+}
+cicilan(2, 23686325, 0.07, 15)
